@@ -14,7 +14,9 @@ class GuesserTest : public ::testing::Test
 		virtual void TearDown(){} //clean up after each test, (before destructor)
 };
 
+/* Example test
 TEST(GuesserTest, smoke_test)
 {
-    ASSERT_TRUE( 1 == 1 );
+    ASSERT_EQ( 1+1, 2 );
 }
+*/

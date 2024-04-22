@@ -45,10 +45,10 @@ public:
 
   /*
     Returns the number of guesses remaining. A Guesser object allows up to
-    three (3) consecutive guesses without a match. If three guesses are made
-    without any being a true match, the secret is locked. However, whenever
-    an unlocked secret is guessed with a true match, the guesses remaining
-    reset to three (3).
+    three (3) consecutive guesses to get a match. If three guesses are made
+    without any being a true match, the secret is locked and it will never
+    again acknowledge a correct match. However, whenever an unlocked secret
+    is guessed with a true match, the guesses remaining reset to three (3).
   */
   unsigned int remaining();
 
