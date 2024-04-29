@@ -18,7 +18,9 @@ private:
     the other string. When the two strings are identical, the distance is 0,
     but for each letter different, the distance increases by 1. When the
     strings are different lengths, each of the extra characters in the longer
-    string also counts as an increase in 1 to the distance.
+    string also counts as an increase in 1 to the distance, up to the length of
+    the secret; in other words, if m_secret has a 10 charactters and the guess
+    has 100, the distance is 10.
   */
   unsigned int distance(string guess);
 
@@ -26,7 +28,8 @@ public:
   /*
     Constructor requires that the secret phrase is provided its value as
     an argument. This secret will not change for the lifespan of an instance
-    of any Guesser object.
+    of any Guesser object and must have a length of 32 characters or less,
+    otherwise, it will be truncated at that length.
   */
   Guesser(string secret);
 
