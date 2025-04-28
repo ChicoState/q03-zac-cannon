@@ -1,6 +1,5 @@
 #!/bin/bash
 
-make clean
-make
+make clean && make
 ./GuesserTest
 gcov -rbc Guesser.cpp

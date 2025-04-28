@@ -1,4 +1,4 @@
-# UnitTestPractice
+# GuesserTest
 
 ## Getting Started
 
@@ -23,4 +23,4 @@ To run commands within the container interactively, use:
 
 `docker run -v "$(pwd)":/usr/src -it cpp-container sh`
 
-and then type commands (e.g. `make`, `./GuesserTest`, `gcov`, etc.) at the `#` prompt.
+and then type commands (e.g. `make clean`, `make`, `./GuesserTest`, `gcov`, etc.) at the `#` prompt.
