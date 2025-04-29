@@ -47,6 +47,8 @@ Guesser::Guesser(string secret){
   else{
     m_secret = secret;
   }
+  m_locked = false;
+  m_remaining = 3;
 }
 
 /*
@@ -61,13 +63,13 @@ Guesser::Guesser(string secret){
   and the secret.
 */
 bool Guesser::match(string guess){
-  if( m_remaining < 1 ){
+  if( m_remaining < 1 || m_locked ){
     return false;
   }
   else if( guess != m_secret ){
     unsigned int difference = distance(guess);
     if( difference > 2 ){
-      m_remaining = 0;
+      m_locked = true;
     }
     else{
       m_remaining--;
@@ -84,7 +86,9 @@ bool Guesser::match(string guess){
   three (3) consecutive guesses without a match. If three guesses are made
   without any being a true match, the secret is locked. However, whenever
   an unlocked secret is guessed with a true match, the guesses remaining
-  reset to three (3).
+  reset to three (3). If the secret is locked for any other reason, such
+  as a big distance in a guess, the count of remaining guesses should still
+  count down as usual to hide that the secret has been locked.
 */
 unsigned int Guesser::remaining(){
   return m_remaining;
